@@ -133,7 +133,7 @@ public class TexturePackParser extends DefaultHandler {
 			final int sourceWidth = SAXUtils.getIntAttributeOrThrow(pAttributes, TAG_TEXTUREREGION_ATTRIBUTE_SOURCE_WIDTH);
 			final int sourceHeight = SAXUtils.getIntAttributeOrThrow(pAttributes, TAG_TEXTUREREGION_ATTRIBUTE_SOURCE_HEIGHT);
 
-			this.mTextureRegionLibrary.put(id, new TexturePackerTextureRegion(this.mTexture, x, y, width, height, id, source, rotated, trimmed, sourceX, sourceY, sourceWidth, sourceHeight));
+			this.mTextureRegionLibrary.add(new TexturePackerTextureRegion(this.mTexture, x, y, width, height, id, source, rotated, trimmed, sourceX, sourceY, sourceWidth, sourceHeight));
 		} else {
 			throw new TexturePackParseException("Unexpected end tag: '" + pLocalName + "'.");
 		}
